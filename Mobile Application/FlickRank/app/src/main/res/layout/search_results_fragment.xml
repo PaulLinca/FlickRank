@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.search.SearchResultsFragment"
+    android:background="@color/primaryBackgroundColor">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="searchResultsViewModel"
+            type="ro.linca.flickrank.presentation.search.SearchResultsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/top_bar_marginStart"
+            android:layout_marginTop="@dimen/top_bar_marginTop"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/backToSearchButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/settings_button_selector"
+                    android:tint="@color/iconTintColor"
+                    android:src="@drawable/ic_arrow_back"/>
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/primaryTextColor"
+                    android:text="@string/search_results_page_title"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text='@{searchResultsViewModel.searchQuery}'
+                    android:textColor="@color/secondaryTextColor"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20sp"/>
+
+                <!--Spacing -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <!--Spacing -->
+
+                <ImageButton
+                    android:id="@+id/searchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_search_black"
+                    android:tint="@color/iconTintColor"
+                    android:background="@drawable/settings_button_selector"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{searchResultsViewModel.searchResultsAmount + " results"}'
+                android:textColor="@color/primaryTextColor"
+                android:visibility="@{searchResultsViewModel.isSearchSuccessful ? View.VISIBLE : View.GONE}"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchResultsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:visibility="@{searchResultsViewModel.isSearchSuccessful ? View.VISIBLE : View.GONE}"/>
+
+    </LinearLayout>
+
+</layout>

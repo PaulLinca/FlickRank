@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ro.linca.flickrank.presentation.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ro.linca.flickrank.presentation.home.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <argument
+            android:name="movieImdbId"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_homeFragment_to_moviePageFragment"
+            app:destination="@id/moviePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="ro.linca.flickrank.presentation.search.SearchFragment"
+        android:label="search_fragment"
+        tools:layout="@layout/search_fragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchResultsFragment"
+            app:destination="@id/searchResultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ro.linca.flickrank.presentation.settings.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultsFragment"
+        android:name="ro.linca.flickrank.presentation.search.SearchResultsFragment"
+        android:label="search_results_fragment"
+        tools:layout="@layout/search_results_fragment" >
+        <argument
+            android:name="searchQuery"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_searchResultsFragment_to_moviePageFragment"
+            app:destination="@id/moviePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviePageFragment"
+        android:name="ro.linca.flickrank.presentation.model.MoviePageFragment"
+        android:label="movie_page_fragment"
+        tools:layout="@layout/movie_page_fragment">
+    <argument
+        android:name="searchQuery"
+        app:argType="string"/>
+    </fragment>
+</navigation>

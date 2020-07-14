@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FlickRank</string>
+
+    <string name="home_page_title">Discover</string>
+    <string name="search_page_title">Search</string>
+    <string name="search_results_page_title">Search Results</string>
+    <string name="settings_page_title">Settings</string>
+
+</resources>

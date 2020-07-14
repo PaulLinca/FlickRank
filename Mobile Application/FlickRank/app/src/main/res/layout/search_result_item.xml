@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="searchResult"
+            type="ro.linca.flickrank.data.dataModels.Movie" />
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:background="@drawable/settings_button_selector">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:imageUrl="@{searchResult.poster}"
+            android:scaleType="fitCenter"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{searchResult.title}"
+                android:textSize="18sp"
+                android:textColor="@color/primaryTextColor"
+                android:layout_gravity="left"
+                android:gravity="left"/>
+
+            <TextView
+                android:id="@+id/yearTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="@{searchResult.year}"
+                android:textColor="@color/secondaryTextColor"
+                android:layout_gravity="left"
+                android:gravity="left"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

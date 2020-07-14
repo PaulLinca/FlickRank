@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--standard-->
+    <color name="colorPrimary">#E91E63</color>
+    <color name="colorPrimaryDark">#0b0b0c</color>
+    <color name="colorAccent">#E91E63</color>
+    <color name="colorSecondaryDark">#E91E63</color>
+    <!--palette-->
+    <color name="primaryRed">#E91E63</color>
+    <color name="primaryYellow">#ff9f00</color>
+    <color name="primaryBlack">#0b0b0c</color>
+    <color name="primaryBlue">#160fb9</color>
+    <color name="primaryDarkGray">#1b1b1f</color>
+    <color name="primaryLightGray">#a6a5b4</color>
+    <!--b&w-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <!--standard grays-->
+    <color name="gray">#808080</color>
+    <color name="lightGray">#D3D3D3</color>
+    <color name="darkGray">#606060</color>
+    <color name="darkerGray">#333339</color>
+
+    <!--by usage-->
+    <color name="bottomNavbarColor">#E91E63</color>
+    <color name="primaryTextColor">#FFFFFF</color>
+    <color name="secondaryTextColor">#a6a5b4</color>
+    <color name="primaryBackgroundColor">#0b0b0c</color>
+    <color name="secondaryBackgroundColor">#a6a5b4</color>
+    <color name="iconTintColor">#FFFFFF</color>
+    <color name="iconTintDarkolor">#45454C</color>
+    <color name="authButtonBackground">#45454C</color>
+    <color name="genreContainerColor">#202025</color>
+</resources>

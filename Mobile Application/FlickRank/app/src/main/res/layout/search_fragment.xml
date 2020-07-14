@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.search.SearchFragment"
+    android:background="@color/primaryBackgroundColor">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="searchViewModel"
+            type="ro.linca.flickrank.presentation.search.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/top_bar_marginStart"
+            android:layout_marginTop="@dimen/top_bar_marginTop"
+            android:orientation="horizontal"
+            android:paddingEnd="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/search_page_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:typeface="sans"
+                android:visibility="@{searchViewModel.manualSearchEnabled ? View.GONE : View.VISIBLE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/closeManualSearchButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="3dp"
+                android:background="@drawable/settings_button_selector"
+                android:src="@drawable/ic_arrow_back"
+                android:tint="@color/iconTintColor"
+                android:visibility="@{searchViewModel.manualSearchEnabled ? View.VISIBLE : View.GONE}" />
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/search_bar_style"
+                android:hint="Search title"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textColor="@color/primaryTextColor"
+                android:textColorHint="@color/secondaryTextColor"
+                android:visibility="@{searchViewModel.manualSearchEnabled ? View.VISIBLE : View.GONE}" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/manualSearchButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/search_selection_button_selector"
+            android:drawableTint="@color/iconTintColor"
+            android:drawableLeft="@drawable/manual_icon2"
+            android:paddingLeft="50dp"
+            android:text="Manual search"
+            android:textSize="16sp"
+            android:textColor="@color/primaryTextColor"
+            android:visibility="@{searchViewModel.manualSearchEnabled ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toTopOf="@id/imageSearchButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/imageSearchButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/search_selection_button_selector"
+            android:drawableTint="@color/iconTintColor"
+            android:drawableLeft="@drawable/camera_icon"
+            android:paddingLeft="50dp"
+            android:text="Image search"
+            android:textSize="16sp"
+            android:textColor="@color/primaryTextColor"
+            android:visibility="@{searchViewModel.manualSearchEnabled ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/imageFromGalleryButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/search_selection_button_selector"
+            android:drawableTint="@color/iconTintColor"
+            android:drawableLeft="@drawable/gallery_icon"
+            android:paddingLeft="50dp"
+            android:text="Image search from gallery"
+            android:textSize="16sp"
+            android:textColor="@color/primaryTextColor"
+            android:visibility="@{searchViewModel.manualSearchEnabled ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageSearchButton" />
+
+        <TextView
+            android:id="@+id/photoTaken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@{searchViewModel.imageSearchResponse}"
+            android:textColor="@color/primaryTextColor"
+            android:visibility="@{searchViewModel.manualSearchEnabled ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageFromGalleryButton" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchHistoryRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="@{searchViewModel.manualSearchEnabled ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginVertical="2dp">
+
+    <data>
+        <variable
+            name="searchQuery"
+            type="ro.linca.flickrank.data.persistence.models.SearchQuery" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@drawable/settings_button_selector">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_recent_search"
+            android:tint="@color/secondaryTextColor"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:textSize="18sp"
+            android:text="@{searchQuery.queryString}"
+            android:textColor="@color/secondaryTextColor" />
+
+        <!--Spacing -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <!--Spacing -->
+
+        <ImageView
+            android:id="@+id/deleteSearchQueryButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10sp"
+            android:src="@drawable/ic_close_black"
+            android:tint="@color/secondaryTextColor"
+            android:background="@drawable/settings_button_selector"/>
+    </LinearLayout>
+
+</layout>

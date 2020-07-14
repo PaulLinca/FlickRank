@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "683965924021",
+    "firebase_url": "https://flickrank-linca.firebaseio.com",
+    "project_id": "flickrank-linca",
+    "storage_bucket": "flickrank-linca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683965924021:android:ce96761d5402bfe4f0f4fc",
+        "android_client_info": {
+          "package_name": "ro.linca.flickrank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683965924021-1dqmk0ho40cp69dvujch1vu2a9cbutum.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ro.linca.flickrank",
+            "certificate_hash": "7d03d9baa863303cf733e3f4cd46972080c890c9"
+          }
+        },
+        {
+          "client_id": "683965924021-04u4dpog4tpgtoud2jgpvahrbpl2ou0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBukTXo8zcxzXgCFeCJNMP8_TDIRKLyaok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683965924021-04u4dpog4tpgtoud2jgpvahrbpl2ou0f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
