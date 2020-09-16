@@ -1,7 +1,7 @@
 # FlickRank
 Original repositories can be found on Gitlab:
 * [Android Mobile Application](https://gitlab.com/PaulLinca/flickrank)
-* [Django API](https://gitlab.com/PaulLinca/flickrankbackend)
+* [Django Backend](https://gitlab.com/PaulLinca/flickrankbackend)
 
 <p align="center">  <img src="Images/flick_rank_logo_2.png" width=600px/> </p> 
 
