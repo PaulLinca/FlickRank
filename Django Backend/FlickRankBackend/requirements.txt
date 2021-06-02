@@ -51,7 +51,7 @@ soupsieve==2.0
 spacey==0.1.1
 sqlparse==0.3.1
 tifffile==2020.5.25
-urllib3==1.25.8
+urllib3==1.26.5
 webencodings==0.5.1
 Werkzeug==1.0.1
 wrapt==1.11.2
